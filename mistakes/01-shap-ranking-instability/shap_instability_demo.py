@@ -25,6 +25,7 @@ import matplotlib.gridspec as gridspec
 from sklearn.ensemble import RandomForestRegressor
 from scipy.stats import spearmanr
 import shap
+import os as _os; _os.makedirs("figures", exist_ok=True)
 
 plt.rcParams.update({
     "figure.dpi":130,"savefig.dpi":240,"font.family":"DejaVu Sans","font.size":11,
@@ -167,15 +168,14 @@ axB.text(0.985,0.05,txt,transform=axB.transAxes,ha="right",va="bottom",fontsize=
 for sp in ("top","right"): axB.spines[sp].set_visible(False)
 fig.suptitle("SHAP ranking is unstable under collinearity: the guild is real, the ordering is noise",
              fontsize=14,fontweight="bold",y=1.03)
-fig.savefig("shap_instability_main.png",bbox_inches="tight"); plt.close(fig)
-__import__("shutil").copy("shap_instability_main.png","shap_instability.png")
+fig.savefig("figures/shap_instability_main.png",bbox_inches="tight"); plt.close(fig)
 
 # standalone beeswarm + bump
 f1,a1=plt.subplots(figsize=(8.8,6.4)); beeswarm(a1,sv_ref,Xc,top_idx)
 a1.set_title("SHAP summary - synthetic gut-omics model\ntop 14 taxa predicting a metabolite")
 cb=f1.colorbar(ScalarMappable(Normalize(0,1),SHAP_CMAP),ax=a1,pad=0.01,fraction=0.045)
 cb.set_ticks([0,1]); cb.set_ticklabels(["Low","High"]); cb.set_label("CLR abundance",fontsize=10)
-f1.savefig("shap_beeswarm.png",bbox_inches="tight"); plt.close(f1)
+f1.savefig("figures/shap_beeswarm.png",bbox_inches="tight"); plt.close(f1)
 
 f2,a2=plt.subplots(figsize=(8.6,5.2))
 for i,(n,ab) in enumerate(zip(DRIVERS,DRIVERS_ABBR)):
@@ -186,7 +186,7 @@ a2.legend(ncol=3,fontsize=8.5,loc="upper center",bbox_to_anchor=(0.5,-0.14),fram
 a2.text(0.985,0.05,txt,transform=a2.transAxes,ha="right",va="bottom",fontsize=9,
         bbox=dict(boxstyle="round,pad=0.4",fc="#f5f5f5",ec="#cccccc"))
 for sp in ("top","right"): a2.spines[sp].set_visible(False)
-f2.savefig("shap_rank_instability.png",bbox_inches="tight"); plt.close(f2)
+f2.savefig("figures/shap_rank_instability.png",bbox_inches="tight"); plt.close(f2)
 
 # co-abundance verification heatmap (top-14 taxa, CLR Spearman)
 shown=[names[i] for i in top_idx]
@@ -197,5 +197,5 @@ a3.set_xticks(range(len(shown))); a3.set_xticklabels(shown,rotation=90,fontsize=
 a3.set_yticks(range(len(shown))); a3.set_yticklabels(shown,fontsize=7.5,fontstyle="italic")
 a3.set_title("Measured co-abundance (CLR Spearman)\nguild block is genuinely correlated")
 f3.colorbar(im3,ax=a3,fraction=0.046,pad=0.02,label="Spearman rho")
-f3.savefig("coabundance_check.png",bbox_inches="tight"); plt.close(f3)
+f3.savefig("figures/coabundance_check.png",bbox_inches="tight"); plt.close(f3)
 print("saved: shap_instability_main.png, shap_beeswarm.png, shap_rank_instability.png, coabundance_check.png")

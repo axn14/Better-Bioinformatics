@@ -5,7 +5,7 @@ even individually meaningful. This guide is the workflow I now follow so that a 
 survives a reviewer, a rerun, and my own second-guessing. It is written with microbiome /
 multi-omics data in mind, but most of it generalises.
 
-Companion demo: [`README.md`](README.md) shows the core failure mode this guide defends against.
+Companion case study: [01 - SHAP ranking instability](https://github.com/axn14/Better-Bioinformatics/tree/main/mistakes/01-shap-ranking-instability) shows the core failure mode this guide defends against.
 
 ---
 

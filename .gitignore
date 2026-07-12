@@ -1,8 +1,8 @@
-*.egg-info/
+__pycache__/
 *.pyc
-.DS_Store
 .ipynb_checkpoints/
 .venv/
-__pycache__/
 env/
-shap_instability.png
+.DS_Store
+*.egg-info/
+*.bundle
