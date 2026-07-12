@@ -23,7 +23,7 @@ Rule of thumb: if it is "how do I reason about X in general", it goes in the wik
 
 | # | Mistake | What it covers | Code | Concept (wiki) |
 |---|---------|----------------|------|----------------|
-| 01 | **SHAP ranking instability under collinearity** | Why the #1 SHAP feature is often a coin-flip when features are correlated, shown on a compositional microbiome pipeline | [`mistakes/01-shap-ranking-instability`](mistakes/01-shap-ranking-instability) | [SHAP Inference Guide](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Inference-Guide) |
+| 01 | **SHAP ranking instability under collinearity** | Why the #1 SHAP feature is often a coin-flip when features are correlated, shown on a compositional microbiome pipeline | [`mistakes/01-shap-ranking-instability`](mistakes/01-shap-ranking-instability) | [SHAP Ranking Instability](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Ranking-Instability) |
 
 *More entries coming. Candidate topics: batch effects mistaken for biology, compositional data
 analysed without CLR, p-value hunting across contrasts, leakage from pre-split feature

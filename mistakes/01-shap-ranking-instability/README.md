@@ -9,7 +9,7 @@ The demo runs a realistic compositional microbiome pipeline end to end, so the c
 is *measured*, not assumed. Data are synthetic and species names are illustrative; the
 statistical structure is real.
 
-> **Companion guide:** the [SHAP Inference Guide](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Inference-Guide) (wiki) — a step-by-step checklist for
+> **Companion guide:** the wiki page [SHAP Ranking Instability](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Ranking-Instability) — how to detect, avoid, and learn about this mistake, with
 > making defensible inferences from SHAP (precursors, workflow, troubleshooting, follow-ups).
 
 ---
@@ -137,7 +137,7 @@ Runs in ~1–2 minutes on a laptop. Regenerates all four figures and prints the 
 
 Short version: cluster correlated features and report **group importance**, then **bootstrap
 the ranks** and publish the stability alongside the importance. The full checklist —including
-what to verify *before* you trust SHAP at all— is in the [SHAP Inference Guide](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Inference-Guide) (wiki).
+what to verify *before* you trust SHAP at all— is in the [SHAP Ranking Instability](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Ranking-Instability) (wiki).
 
 ## 8. Entry layout
 ```
@@ -152,15 +152,8 @@ mistakes/01-shap-ranking-instability/
     └── shap_rank_instability.png   # standalone panel B
 ```
 The generalizable checklist lives in the repo wiki:
-[SHAP Inference Guide](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Inference-Guide).
+[SHAP Ranking Instability](https://github.com/axn14/Better-Bioinformatics/wiki/SHAP-Ranking-Instability).
 Run the demo from inside this folder (`cd mistakes/01-shap-ranking-instability`); it writes into `figures/`.
 
 ## 9. Honesty / caveats
-Data are synthetic and species names are illustrative — chosen so the panel reads like a real
-gut dataset. The compositional structure, the CLR pipeline, and the measured co-abundance are
-real. The instability shown is a property of correlated features under SHAP, not of these
-particular labels.
-
-## 10. License & citation
-MIT. If it helped, a link back is appreciated: *Anirudh D. Nair, "SHAP ranking instability under
-collinearity" (2026).*
+Data are synthetic and species names are illustrative — chosen so the pane
